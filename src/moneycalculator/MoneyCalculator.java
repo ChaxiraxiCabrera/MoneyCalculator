@@ -8,7 +8,7 @@ public class MoneyCalculator {
         Money money = new Money(300, currency);
         ExchangeRate exchangeRate = new ExchangeRate(currency, currency1, 1.21);
        
-        System.out.println(MoneyExchanger.exchange(money, exchangeRate).getAmount());
+        System.out.println(MoneyExchanger.exchange(money, exchangeRate).getAmount()+currency.getSymbol());
     }
     
 }
