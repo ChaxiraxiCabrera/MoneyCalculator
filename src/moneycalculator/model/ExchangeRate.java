@@ -1,4 +1,4 @@
-package moneycalculator;
+package moneycalculator.model;
 
 public class ExchangeRate {
     private final Currency from;    

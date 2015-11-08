@@ -1,5 +1,10 @@
 package moneycalculator;
 
+import moneycalculator.process.MoneyExchanger;
+import moneycalculator.model.ExchangeRate;
+import moneycalculator.model.Currency;
+import moneycalculator.model.Money;
+
 public class MoneyCalculator {
 
     public static void main(String[] args) {
