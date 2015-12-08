@@ -1,9 +1,14 @@
 package moneycalculator;
 
+import moneycalculator.control.ExchangeCommand;
 import moneycalculator.process.MoneyExchanger;
 import moneycalculator.model.ExchangeRate;
 import moneycalculator.model.Currency;
 import moneycalculator.model.Money;
+import moneycalculator.persitence.MockExchangeRateReader;
+import moneycalculator.ui.MockCurrencyDialog;
+import moneycalculator.ui.MockMoneyDialog;
+import moneycalculator.ui.MockMoneyDisplay;
 
 public class MoneyCalculator {
 
@@ -13,7 +18,11 @@ public class MoneyCalculator {
         Money money = new Money(300, currency);
         ExchangeRate exchangeRate = new ExchangeRate(currency, currency1, 1.21);
        
-        System.out.println(MoneyExchanger.exchange(money, exchangeRate).getAmount()+currency.getSymbol());
+        ExchangeCommand exchangeCommand = new ExchangeCommand(new MockMoneyDialog(),
+                                                    new MockCurrencyDialog(),
+                                                    new MockExchangeRateReader(),
+                                                    new MockMoneyDisplay());
+        exchangeCommand.execute();
     }
     
 }
