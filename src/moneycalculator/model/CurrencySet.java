@@ -3,7 +3,16 @@ package moneycalculator.model;
 import java.util.ArrayList;
 
 public class CurrencySet {
-    private ArrayList<Currency> list = new ArrayList<>();
+    private final ArrayList<Currency> list ;
+
+    public CurrencySet() {
+        this.list = new ArrayList<>();
+    }
+
+    public ArrayList<Currency> getList() {
+        return list;
+    }
+    
     
     public void add(Currency currency){
         list.add(currency);
@@ -18,5 +27,9 @@ public class CurrencySet {
             }
         }
         return null;
+    }
+    
+    public Currency[] currencies (){
+        return this.list.toArray(new Currency[list.size()]);
     }
 }

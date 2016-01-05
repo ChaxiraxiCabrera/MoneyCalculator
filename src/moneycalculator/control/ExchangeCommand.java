@@ -27,8 +27,8 @@ public class ExchangeCommand implements Command{
     public void execute(){
         Money money = moneyDialog.get();
         Currency currency = currencyDialog.get();
-        ExchangeRate exchangeRate = exchangeRateReader.get(currency, currency);
-        Money result = MoneyExchanger.exchange(money, exchangeRate);
+        ExchangeRate exchangeRate = exchangeRateReader.get(money.getCurrency(), currency);
+        Money result = new MoneyExchanger().exchange(money, exchangeRate);
         moneyDisplay.show(result);
     }
 }
