@@ -10,6 +10,12 @@ public class Currency {
         this.name = name;
         this.symbol = symbol;
     }
+    
+    public Currency(String code) {
+        this.code = code;
+        this.name = "";
+        this.symbol = "";
+    }
 
     public String getCode() {
         return code;
